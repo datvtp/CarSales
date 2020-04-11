@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account_Roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_Accounts_Account_Roles" FromRole="Account_Roles" ToRole="Accounts" />
+  </EntityType>
+  <EntityType Name="Account_Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_Accounts_Account_Status" FromRole="Account_Status" ToRole="Accounts" />
+  </EntityType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Account_Role_ID" Type="Int32" Nullable="false" />
+    <Property Name="Account_Status_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account_Roles" Relationship="Self.FK_Accounts_Account_Roles" FromRole="Accounts" ToRole="Account_Roles" />
+    <NavigationProperty Name="Account_Status" Relationship="Self.FK_Accounts_Account_Status" FromRole="Accounts" ToRole="Account_Status" />
+  </EntityType>
+  <EntityType Name="Car_Categories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Car_Categories" FromRole="Car_Categories" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="Car_Fuels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Car_Fuels" FromRole="Car_Fuels" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="Car_Manufacturers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Car_Manufacturers" FromRole="Car_Manufacturers" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="Car_Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Car_Status" FromRole="Car_Status" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="Car_Tranmissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Car_Tranmissions" FromRole="Car_Tranmissions" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="Car_Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Car_Types" FromRole="Car_Types" ToRole="Cars" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Produced_Year" Type="Int32" Nullable="false" />
+    <Property Name="Accquired_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Engine" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Manufacturer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Tranmission_ID" Type="Int32" Nullable="false" />
+    <Property Name="Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Category_ID" Type="Int32" Nullable="false" />
+    <Property Name="Fuel_ID" Type="Int32" Nullable="false" />
+    <Property Name="Status_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Car_Categories" Relationship="Self.FK_Cars_Car_Categories" FromRole="Cars" ToRole="Car_Categories" />
+    <NavigationProperty Name="Car_Fuels" Relationship="Self.FK_Cars_Car_Fuels" FromRole="Cars" ToRole="Car_Fuels" />
+    <NavigationProperty Name="Car_Manufacturers" Relationship="Self.FK_Cars_Car_Manufacturers" FromRole="Cars" ToRole="Car_Manufacturers" />
+    <NavigationProperty Name="Car_Status" Relationship="Self.FK_Cars_Car_Status" FromRole="Cars" ToRole="Car_Status" />
+    <NavigationProperty Name="Car_Tranmissions" Relationship="Self.FK_Cars_Car_Tranmissions" FromRole="Cars" ToRole="Car_Tranmissions" />
+    <NavigationProperty Name="Car_Types" Relationship="Self.FK_Cars_Car_Types" FromRole="Cars" ToRole="Car_Types" />
+    <NavigationProperty Name="Invoice_Details" Relationship="Self.FK_Invoice_Details_Cars" FromRole="Cars" ToRole="Invoice_Details" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_Customers" FromRole="Customers" ToRole="Invoices" />
+  </EntityType>
+  <EntityType Name="Invoice_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Car_ID" Type="Int32" Nullable="false" />
+    <Property Name="Invoice_ID" Type="Int32" Nullable="false" />
+    <Property Name="Unit_Price" Type="Double" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="Self.FK_Invoice_Details_Cars" FromRole="Invoice_Details" ToRole="Cars" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Details_Invoices" FromRole="Invoice_Details" ToRole="Invoices" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date_Of_Purcharse" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Invoices_Customers" FromRole="Invoices" ToRole="Customers" />
+    <NavigationProperty Name="Invoice_Details" Relationship="Self.FK_Invoice_Details_Invoices" FromRole="Invoices" ToRole="Invoice_Details" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Accounts_Account_Roles">
+    <End Role="Account_Roles" Type="Self.Account_Roles" Multiplicity="1" />
+    <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account_Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="Account_Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Accounts_Account_Status">
+    <End Role="Account_Status" Type="Self.Account_Status" Multiplicity="1" />
+    <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account_Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="Account_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Car_Categories">
+    <End Role="Car_Categories" Type="Self.Car_Categories" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car_Categories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Car_Fuels">
+    <End Role="Car_Fuels" Type="Self.Car_Fuels" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car_Fuels">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="Fuel_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Car_Manufacturers">
+    <End Role="Car_Manufacturers" Type="Self.Car_Manufacturers" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car_Manufacturers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="Manufacturer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Car_Status">
+    <End Role="Car_Status" Type="Self.Car_Status" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car_Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Car_Tranmissions">
+    <End Role="Car_Tranmissions" Type="Self.Car_Tranmissions" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car_Tranmissions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="Tranmission_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cars_Car_Types">
+    <End Role="Car_Types" Type="Self.Car_Types" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Car_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cars">
+        <PropertyRef Name="Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Details_Cars">
+    <End Role="Cars" Type="Self.Car" Multiplicity="1" />
+    <End Role="Invoice_Details" Type="Self.Invoice_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cars">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Invoice_Details">
+        <PropertyRef Name="Car_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_Customers">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Invoices" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Details_Invoices">
+    <End Role="Invoices" Type="Self.Invoice" Multiplicity="1" />
+    <End Role="Invoice_Details" Type="Self.Invoice_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Invoice_Details">
+        <PropertyRef Name="Invoice_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Account_Roles" EntityType="Self.Account_Roles" />
+    <EntitySet Name="Account_Status" EntityType="Self.Account_Status" />
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Car_Categories" EntityType="Self.Car_Categories" />
+    <EntitySet Name="Car_Fuels" EntityType="Self.Car_Fuels" />
+    <EntitySet Name="Car_Manufacturers" EntityType="Self.Car_Manufacturers" />
+    <EntitySet Name="Car_Status" EntityType="Self.Car_Status" />
+    <EntitySet Name="Car_Tranmissions" EntityType="Self.Car_Tranmissions" />
+    <EntitySet Name="Car_Types" EntityType="Self.Car_Types" />
+    <EntitySet Name="Cars" EntityType="Self.Car" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Invoice_Details" EntityType="Self.Invoice_Details" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Accounts_Account_Roles" Association="Self.FK_Accounts_Account_Roles">
+      <End Role="Account_Roles" EntitySet="Account_Roles" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Accounts_Account_Status" Association="Self.FK_Accounts_Account_Status">
+      <End Role="Account_Status" EntitySet="Account_Status" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Car_Categories" Association="Self.FK_Cars_Car_Categories">
+      <End Role="Car_Categories" EntitySet="Car_Categories" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Car_Fuels" Association="Self.FK_Cars_Car_Fuels">
+      <End Role="Car_Fuels" EntitySet="Car_Fuels" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Car_Manufacturers" Association="Self.FK_Cars_Car_Manufacturers">
+      <End Role="Car_Manufacturers" EntitySet="Car_Manufacturers" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Car_Status" Association="Self.FK_Cars_Car_Status">
+      <End Role="Car_Status" EntitySet="Car_Status" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Car_Tranmissions" Association="Self.FK_Cars_Car_Tranmissions">
+      <End Role="Car_Tranmissions" EntitySet="Car_Tranmissions" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Car_Types" Association="Self.FK_Cars_Car_Types">
+      <End Role="Car_Types" EntitySet="Car_Types" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Details_Cars" Association="Self.FK_Invoice_Details_Cars">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="Invoice_Details" EntitySet="Invoice_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Customers" Association="Self.FK_Invoices_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Details_Invoices" Association="Self.FK_Invoice_Details_Invoices">
+      <End Role="Invoices" EntitySet="Invoices" />
+      <End Role="Invoice_Details" EntitySet="Invoice_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

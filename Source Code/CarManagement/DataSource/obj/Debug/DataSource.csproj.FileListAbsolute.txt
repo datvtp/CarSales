@@ -1,0 +1,6 @@
+D:\Learning\CN5\PRN292\Car_Management_Project\CarManagement\DataSource\bin\Debug\DataSource.dll
+D:\Learning\CN5\PRN292\Car_Management_Project\CarManagement\DataSource\bin\Debug\DataSource.pdb
+D:\Learning\CN5\PRN292\Car_Management_Project\CarManagement\DataSource\obj\Debug\DataSource.csprojAssemblyReference.cache
+D:\Learning\CN5\PRN292\Car_Management_Project\CarManagement\DataSource\obj\Debug\DataSource.csproj.CoreCompileInputs.cache
+D:\Learning\CN5\PRN292\Car_Management_Project\CarManagement\DataSource\obj\Debug\DataSource.dll
+D:\Learning\CN5\PRN292\Car_Management_Project\CarManagement\DataSource\obj\Debug\DataSource.pdb

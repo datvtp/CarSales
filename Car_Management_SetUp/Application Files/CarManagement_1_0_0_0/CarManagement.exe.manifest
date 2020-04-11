@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="CarManagement.exe" version="1.0.0.0" publicKeyToken="53b8e6d0fd023687" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Car_Icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="CarManagement" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="CarManagement.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CarManagement.exe" size="191416">
+      <assemblyIdentity name="CarManagement" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>cYDZdrAHxjvYuyh9Cen6ubezrpIV7A93Kvc/BkoqhzI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataSource.dll" size="36352">
+      <assemblyIdentity name="DataSource" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Edn7JkjS31WSTaos/cXsdIih+f/HipcQ/2ovu2cPJDM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5225168">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nCD7KthqdgsMauvZMByQCYkdAq4UcgqTkmwLU1uK0Js=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="622288">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4OEmw7inupUB0D+Z1Upcu9F0vOy2FwCYq0zBIZ8n+TM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Car_Icon.ico" size="5430">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>PwrNkeuKHsY514HcfjD+8/6+wVbIOIfxxjMbw39EbH4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="CarManagement.exe.config" size="893">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Hp1q5NBx3XWjCkuSupFSgMlyeEyfhMXtgcblSGB3y4A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on
+           and is designed to work with. Uncomment the appropriate elements
+           and Windows will automatically select the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=SE130566\Admin" issuerKeyHash="3636e9c85e64aac64af029349c8933a56a9a0291" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>QE6P3KUbcOAsBgx4ORl0XCYKG9pnw3cbmM6ffFVYWQc=</DigestValue></Reference></SignedInfo><SignatureValue>lYy3FxMJK25GwxItkr+Iji+A6qONgtNHQcDh3lM38mevNg6+mFQT0tpX5y5lxFkbuk5HjHcxumyeH6p8aa9cecbU0avBi3bJEU2o/lbDweIY+SXlMsJO/DQ18Zi1Fd4hD97qXvyslkjV4je/V880/vbutm8n60Dl02KZi5ByH9I=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>z6CVDG1mH8iKWLja08NbxrLi7NS3cwg5dn8fNqls4GMYqY4F1svaaqHoC2rKy1CbItOk2n9ffvh86+Gs59mm7umW8W/x9Il4WtJ2/T7VzlGp+BBamQ5h5nslOI0WPIODg3N45c76mU3nXwIeQ1qb3GZLObuzfTZ1yzA368d24r0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="075958557c9fce981b77c367da1b0a265c741939780c062ce0701ba5dc8f4e40" Description="" Url=""><as:assemblyIdentity name="CarManagement.exe" version="1.0.0.0" publicKeyToken="53b8e6d0fd023687" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SE130566\Admin</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>QU6DqErnVdVXw5S+pOQiqnkgojiin+ve3NDBcgFd1eM=</DigestValue></Reference></SignedInfo><SignatureValue>vGrs56E1EaNNOix4MpMslP40ZJDB0/HCSgPY8vBOV/HkDHoBv8z9GENPhFA8Ohph2j8JBe6KxlLFcmr05qkfoYOylU4KqrJQ70SK9UDftdqaj8/AGjFs29DW9EWqwa7GEan7pFzS29qxdyZ7Igf/78LETflhVDFGm/sH0Upz+zk=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>z6CVDG1mH8iKWLja08NbxrLi7NS3cwg5dn8fNqls4GMYqY4F1svaaqHoC2rKy1CbItOk2n9ffvh86+Gs59mm7umW8W/x9Il4WtJ2/T7VzlGp+BBamQ5h5nslOI0WPIODg3N45c76mU3nXwIeQ1qb3GZLObuzfTZ1yzA368d24r0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQIRMqBwD5TLZB6FgV8bKT5DANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwAUwBFADEAMwAwADUANgA2AFwAQQBkAG0AaQBuMB4XDTIwMDQwNTA1MzUwOVoXDTIxMDQwNTExMzUwOVowJzElMCMGA1UEAx4cAFMARQAxADMAMAA1ADYANgBcAEEAZABtAGkAbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAz6CVDG1mH8iKWLja08NbxrLi7NS3cwg5dn8fNqls4GMYqY4F1svaaqHoC2rKy1CbItOk2n9ffvh86+Gs59mm7umW8W/x9Il4WtJ2/T7VzlGp+BBamQ5h5nslOI0WPIODg3N45c76mU3nXwIeQ1qb3GZLObuzfTZ1yzA368d24r0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQAEY0aPjW8xsGnS9EjObe2k/VrOWQEsE0Bx7IP7+6x2AWN2pla/CLMMD+eKsSd80W7DicRFd9yU8rPHTyZ43H76MHV5F/S6oM5PereNSRSaEYknTvv6iTX3oZh7ULkHQxgLQQaxqp3aGkanW1fvyC6E6pO5NwJCx2gnydRM1sjf/g==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
